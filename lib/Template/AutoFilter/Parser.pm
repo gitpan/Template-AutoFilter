@@ -3,7 +3,7 @@ use warnings;
 
 package Template::AutoFilter::Parser;
 BEGIN {
-  $Template::AutoFilter::Parser::VERSION = '0.110020';
+  $Template::AutoFilter::Parser::VERSION = '0.110030';
 }
 
 # ABSTRACT: parses TT templates and automatically adds filters to tokens
@@ -28,12 +28,26 @@ sub split_text {
         next if !ref $token;
 
         my %fields = @{$token->[2]};
-        next if $fields{FILTER};
+        next if has_skip_field( \%fields );
 
         push @{$token->[2]}, qw( FILTER | IDENT ), $self->{AUTO_FILTER};
     }
 
     return $tokens;
+}
+
+sub has_skip_field {
+    my ( $fields ) = @_;
+
+    for my $field ( qw(
+        CALL SET DEFAULT INCLUDE PROCESS WRAPPER BLOCK IF UNLESS ELSIF ELSE
+        END SWITCH CASE FOREACH FOR WHILE FILTER USE MACRO TRY CATCH FINAL
+        THROW NEXT LAST RETURN STOP CLEAR META TAGS DEBUG
+    ) ) {
+        return 1 if $fields->{$field};
+    }
+
+    return 0;
 }
 
 1;
@@ -47,7 +61,7 @@ Template::AutoFilter::Parser - parses TT templates and automatically adds filter
 
 =head1 VERSION
 
-version 0.110020
+version 0.110030
 
 =head1 DESCRIPTION
 
@@ -64,6 +78,11 @@ the name of a filter to be applied. This parameter defaults to 'html'.
 
 Modifies token processing by adding the filter specified in AUTO_FILTER
 to all filter-less interpolation tokens.
+
+=head2 has_skip_field
+
+Checks the field list of a token to see if it contains directives that
+should be excluded from filtering.
 
 =head1 AUTHOR
 

@@ -9,6 +9,7 @@ dist.ini
 lib/Template/AutoFilter.pm
 lib/Template/AutoFilter/Parser.pm
 t/autofilter.t
+t/included.tt
 t/release-kwalitee.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t

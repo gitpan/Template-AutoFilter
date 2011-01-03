@@ -5,6 +5,10 @@ use warnings;
 
 package autofilter;
 
+BEGIN {
+    chdir '..' if -d '../t';
+}
+
 use lib 'lib';
 use lib '../lib';
 
@@ -47,6 +51,15 @@ sub tests {(
         expect => '<A>',
         params => { AUTO_FILTER => 'upper' }
     },
+    {
+        name => 'includes are not filtered',
+        tmpl => '[% test %] [% INCLUDE included.tt %]',
+        expect => "<A> test <html> <A>\n",
+        params => {
+            AUTO_FILTER => 'upper',
+            INCLUDE_PATH => 't',
+        },
+    },
 )}
 
 sub run_tests {
@@ -66,7 +79,7 @@ sub run_test {
     my $res = $tt->process( \$test->{tmpl}, { test => '<a>' }, \$out );
 
     subtest $test->{name} => sub {
-        cmp_deeply( [ $tt->error, $res ], [ '', 1 ], 'no template errors' );
+        cmp_deeply( [ $tt->error."", $res ], [ '', 1 ], 'no template errors' );
 
         is( $out, $test->{expect}, 'output is correct' );
     };
