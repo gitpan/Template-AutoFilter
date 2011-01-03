@@ -46,7 +46,7 @@
          "web" : "http://github.com/wchristian/Template-AutoFilter"
       }
    },
-   "version" : "0.110031",
+   "version" : "0.110032",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
