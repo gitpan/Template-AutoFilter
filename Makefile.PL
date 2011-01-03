@@ -27,7 +27,7 @@ my %WriteMakefileArgs = (
     'Template' => '0',
     'Template::Parser' => '0'
   },
-  'VERSION' => '0.110030',
+  'VERSION' => '0.110031',
   'test' => {
     'TESTS' => 't/*.t'
   }
