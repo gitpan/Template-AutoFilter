@@ -3,7 +3,7 @@ use warnings;
 
 package Template::AutoFilter;
 BEGIN {
-  $Template::AutoFilter::VERSION = '0.110032';
+  $Template::AutoFilter::VERSION = '0.110050';
 }
 
 # ABSTRACT: Template::Toolkit with automatic filtering
@@ -36,30 +36,31 @@ Template::AutoFilter - Template::Toolkit with automatic filtering
 
 =head1 VERSION
 
-version 0.110032
+version 0.110050
 
 =head1 SYNOPSIS
 
     use Template::AutoFilter;
 
-    my $templ = "[% str | none %]  [% str %]";
+    my $templ = "[% str %]  [% str | none %]  [% str | url %]";
 
     my $out;
     Template::AutoFilter->new->process( \$templ, { str => '<a>' }, \$out );
 
-    print $out; # <a>  &lt;a&gt;
+    print $out; # "&lt;a&gt;  <a>  %3Ca%3E"
 
     my $out;
     Template::AutoFilter->new( AUTO_FILTER => 'upper' )->process( \$templ, { str => '<a>' }, \$out );
 
-    print $out; # <a>  <A>
+    print $out; # "<A>  <a>  %3Ca%3E"
 
 =head1 DESCRIPTION
 
 Template::AutoFilter is a subclass of Template::Toolkit which loads a
-specific Parser that is subclassed from Template::Parser and adds a
+specific Parser that is subclassed from Template::Parser. It adds a
 filter instruction to each interpolation token found in templates
-loaded by the TT engine.
+loaded by the TT engine. Tokens that already have a filter instruction
+are left unchanged.
 
 By default this automatic filter is set to be 'html', but can be modified
 during object creation by passing the AUTO_FILTER option with the name
