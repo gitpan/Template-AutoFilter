@@ -23,7 +23,7 @@ requires:
   Template::Parser: 0
 resources:
   repository: http://github.com/wchristian/Template-AutoFilter.git
-version: 0.110050
+version: 0.110080
 x_Dist_Zilla:
   plugins:
     -
