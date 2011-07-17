@@ -3,7 +3,7 @@ use warnings;
 
 package Template::AutoFilter::Parser;
 BEGIN {
-  $Template::AutoFilter::Parser::VERSION = '0.110080';
+  $Template::AutoFilter::Parser::VERSION = '0.111980';
 }
 
 # ABSTRACT: parses TT templates and automatically adds filters to tokens
@@ -28,7 +28,7 @@ sub split_text {
     for my $token ( @{$tokens} ) {
         next if !ref $token;
 
-        my %fields = @{$token->[2]};
+        my %fields = grep { !ref } @{$token->[2]}; # filter out nested fields, they don't matter for our decision of whether there is a filter already
         next if $self->has_skip_field( \%fields );
 
         push @{$token->[2]}, qw( FILTER | IDENT ), $self->{AUTO_FILTER};
@@ -78,7 +78,7 @@ Template::AutoFilter::Parser - parses TT templates and automatically adds filter
 
 =head1 VERSION
 
-version 0.110080
+version 0.111980
 
 =head1 DESCRIPTION
 
