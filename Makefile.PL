@@ -2,9 +2,9 @@
 use strict;
 use warnings;
 
+use 5.006;
 
-
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
@@ -12,12 +12,14 @@ my %WriteMakefileArgs = (
   'ABSTRACT' => 'Template::Toolkit with automatic filtering',
   'AUTHOR' => 'Christian Walde <walde.christian@googlemail.com>',
   'BUILD_REQUIRES' => {
+    'File::Find' => '0',
+    'File::Temp' => '0',
+    'Test::InDistDir' => '0',
     'Test::More' => '0',
-    'Test::Most' => '0',
-    'Test::Simple' => '0.96'
+    'Test::Most' => '0'
   },
   'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+    'ExtUtils::MakeMaker' => '6.30'
   },
   'DISTNAME' => 'Template-AutoFilter',
   'EXE_FILES' => [],
@@ -27,7 +29,7 @@ my %WriteMakefileArgs = (
     'Template' => '0',
     'Template::Parser' => '0'
   },
-  'VERSION' => '0.111980',
+  'VERSION' => '0.112070',
   'test' => {
     'TESTS' => 't/*.t'
   }

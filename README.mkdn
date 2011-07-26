@@ -1,42 +1,12 @@
-use strict;
-use warnings;
-
-package Template::AutoFilter;
-
-our $VERSION = '0.112070'; # VERSION
-# ABSTRACT: Template::Toolkit with automatic filtering
-
-
-use base 'Template';
-
-use lib '..';
-use Template::AutoFilter::Parser;
-
-sub new {
-    my $class = shift;
-
-    my $params = defined($_[0]) && ref($_[0]) eq 'HASH' ? shift : {@_};
-    $params->{FILTERS}{none} ||= sub { $_[0] };
-
-    $params->{PARSER} ||= Template::AutoFilter::Parser->new( $params );
-
-    return $class->SUPER::new( $params );
-}
-
-1;
-
-__END__
-=pod
-
-=head1 NAME
+# NAME
 
 Template::AutoFilter - Template::Toolkit with automatic filtering
 
-=head1 VERSION
+# VERSION
 
 version 0.112070
 
-=head1 SYNOPSIS
+# SYNOPSIS
 
     use Template::AutoFilter;
 
@@ -52,7 +22,7 @@ version 0.112070
 
     print $out; # "<A>  <a>  %3Ca%3E"
 
-=head1 DESCRIPTION
+# DESCRIPTION
 
 Template::AutoFilter is a subclass of Template::Toolkit which loads a
 specific Parser that is subclassed from Template::Parser. It adds a
@@ -68,7 +38,7 @@ Additionally a pass-through filter called 'none' is added to the object to
 allow exclusion of tokens from being filtered.
 
 Lastly, if you have problems with the directives which get auto filters
-applied, you can see the L<Template::AutoFilter::Parser> docs for how you
+applied, you can see the [Template::AutoFilter::Parser](http://search.cpan.org/perldoc?Template::AutoFilter::Parser) docs for how you
 can customize that.
 
 WARNING: This module is highly experimental. I have not done a lot of
@@ -79,9 +49,9 @@ github.
 
 Use at your own risk.
 
-=head1 METHODS
+# METHODS
 
-=head2 new
+## new
 
 Pre-processes the parameters passed on to Template's new(). Adds the
 pass-through filter and creates the AutoFilter Parser.
@@ -89,36 +59,31 @@ pass-through filter and creates the AutoFilter Parser.
 All parameters passed to this new() will also be passed to the parser's
 new().
 
-=for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders
+# SUPPORT
 
-=head1 SUPPORT
+## Bugs / Feature Requests
 
-=head2 Bugs / Feature Requests
-
-Please report any bugs or feature requests by email to C<bug-template-autofilter at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/Public/Dist/Display.html?Name=Template-AutoFilter>. You will be automatically notified of any
+Please report any bugs or feature requests by email to `bug-template-autofilter at rt.cpan.org`, or through
+the web interface at [http://rt.cpan.org/Public/Dist/Display.html?Name=Template-AutoFilter](http://rt.cpan.org/Public/Dist/Display.html?Name=Template-AutoFilter). You will be automatically notified of any
 progress on the request by the system.
 
-=head2 Source Code
+## Source Code
 
 This is open source software.  The code repository is available for
 public review and contribution under the terms of the license.
 
-L<https://github.com/wchristian/Template-AutoFilter>
+[https://github.com/wchristian/Template-AutoFilter](https://github.com/wchristian/Template-AutoFilter)
 
   git clone https://github.com/wchristian/Template-AutoFilter
 
-=head1 AUTHOR
+# AUTHOR
 
 Christian Walde <walde.christian@googlemail.com>
 
-=head1 COPYRIGHT AND LICENSE
+# COPYRIGHT AND LICENSE
 
 This software is Copyright (c) 2011 by Christian Walde.
 
 This is free software, licensed under:
 
   DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE, Version 2, December 2004
-
-=cut
-

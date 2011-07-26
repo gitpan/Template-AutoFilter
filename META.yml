@@ -3,13 +3,15 @@ abstract: 'Template::Toolkit with automatic filtering'
 author:
   - 'Christian Walde <walde.christian@googlemail.com>'
 build_requires:
+  File::Find: 0
+  File::Temp: 0
+  Test::InDistDir: 0
   Test::More: 0
   Test::Most: 0
-  Test::Simple: 0.96
 configure_requires:
-  ExtUtils::MakeMaker: 6.31
+  ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.200004, CPAN::Meta::Converter version 2.110930'
+generated_by: 'Dist::Zilla version 4.200013, CPAN::Meta::Converter version 2.110930'
 license: unrestricted
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -18,156 +20,24 @@ name: Template-AutoFilter
 no_index:
   directory:
     - t
+    - xt
+    - examples
+    - corpus
+  package:
+    - DB
+provides:
+  Template::AutoFilter:
+    file: lib/Template/AutoFilter.pm
+    version: 0.112070
+  Template::AutoFilter::Parser:
+    file: lib/Template/AutoFilter/Parser.pm
+    version: 0.112070
 requires:
   Template: 0
   Template::Parser: 0
+  perl: 5.006
 resources:
-  repository: http://github.com/wchristian/Template-AutoFilter.git
-version: 0.111980
-x_Dist_Zilla:
-  plugins:
-    -
-      class: Dist::Zilla::Plugin::AutoVersion
-      name: AutoVersion
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::PkgVersion
-      name: PkgVersion
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::GatherDir
-      name: GatherDir
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::PruneCruft
-      name: PruneCruft
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::ManifestSkip
-      name: ManifestSkip
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::AutoPrereqs
-      name: AutoPrereqs
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::MetaYAML
-      name: MetaYAML
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::License
-      name: License
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::Readme
-      name: Readme
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::PodWeaver
-      name: PodWeaver
-      version: 3.101641
-    -
-      class: Dist::Zilla::Plugin::ExtraTests
-      name: ExtraTests
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::PodCoverageTests
-      name: PodCoverageTests
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::PodSyntaxTests
-      name: PodSyntaxTests
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::KwaliteeTests
-      name: KwaliteeTests
-      version: 1.101420
-    -
-      class: Dist::Zilla::Plugin::MetaConfig
-      name: MetaConfig
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::MetaJSON
-      name: MetaJSON
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::CheckChangeLog
-      name: CheckChangeLog
-      version: 0.01
-    -
-      class: Dist::Zilla::Plugin::NextRelease
-      name: NextRelease
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::MakeMaker
-      name: MakeMaker
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::Manifest
-      name: Manifest
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::TestRelease
-      name: TestRelease
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::ConfirmRelease
-      name: ConfirmRelease
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::UploadToCPAN
-      name: UploadToCPAN
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::Git::Check
-      name: '@Git/Check'
-      version: 1.111590
-    -
-      class: Dist::Zilla::Plugin::Git::Commit
-      name: '@Git/Commit'
-      version: 1.111590
-    -
-      class: Dist::Zilla::Plugin::Git::Tag
-      name: '@Git/Tag'
-      version: 1.111590
-    -
-      class: Dist::Zilla::Plugin::Git::Push
-      name: '@Git/Push'
-      version: 1.111590
-    -
-      class: Dist::Zilla::Plugin::MetaNoIndex
-      name: MetaNoIndex
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::Prereqs
-      config:
-        Dist::Zilla::Plugin::Prereqs:
-          phase: test
-          type: requires
-      name: TestRequires
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::MetaResources
-      name: MetaResources
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::FinderCode
-      name: ':InstallModules'
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::FinderCode
-      name: ':TestFiles'
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::FinderCode
-      name: ':ExecFiles'
-      version: 4.200004
-    -
-      class: Dist::Zilla::Plugin::FinderCode
-      name: ':ShareFiles'
-      version: 4.200004
-  zilla:
-    class: Dist::Zilla::Dist::Builder
-    config:
-      is_trial: 0
-    version: 4.200004
+  bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Template-AutoFilter
+  homepage: https://github.com/wchristian/Template-AutoFilter
+  repository: https://github.com/wchristian/Template-AutoFilter
+version: 0.112070

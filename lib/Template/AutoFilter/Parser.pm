@@ -2,10 +2,8 @@ use strict;
 use warnings;
 
 package Template::AutoFilter::Parser;
-BEGIN {
-  $Template::AutoFilter::Parser::VERSION = '0.111980';
-}
 
+our $VERSION = '0.112070'; # VERSION
 # ABSTRACT: parses TT templates and automatically adds filters to tokens
 
 
@@ -78,7 +76,7 @@ Template::AutoFilter::Parser - parses TT templates and automatically adds filter
 
 =head1 VERSION
 
-version 0.111980
+version 0.112070
 
 =head1 DESCRIPTION
 
