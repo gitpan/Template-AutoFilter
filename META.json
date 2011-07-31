@@ -42,7 +42,7 @@
             "File::Find" : 0,
             "File::Temp" : 0,
             "Test::InDistDir" : 0,
-            "Test::More" : 0,
+            "Test::More" : "0.96",
             "Test::Most" : 0
          }
       }
@@ -50,11 +50,11 @@
    "provides" : {
       "Template::AutoFilter" : {
          "file" : "lib/Template/AutoFilter.pm",
-         "version" : "0.112070"
+         "version" : "0.112120"
       },
       "Template::AutoFilter::Parser" : {
          "file" : "lib/Template/AutoFilter/Parser.pm",
-         "version" : "0.112070"
+         "version" : "0.112120"
       }
    },
    "release_status" : "stable",
@@ -70,6 +70,6 @@
          "web" : "https://github.com/wchristian/Template-AutoFilter"
       }
    },
-   "version" : "0.112070"
+   "version" : "0.112120"
 }
 

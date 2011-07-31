@@ -3,7 +3,7 @@ use warnings;
 
 package Template::AutoFilter;
 
-our $VERSION = '0.112070'; # VERSION
+our $VERSION = '0.112120'; # VERSION
 # ABSTRACT: Template::Toolkit with automatic filtering
 
 
@@ -34,7 +34,7 @@ Template::AutoFilter - Template::Toolkit with automatic filtering
 
 =head1 VERSION
 
-version 0.112070
+version 0.112120
 
 =head1 SYNOPSIS
 

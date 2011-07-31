@@ -15,7 +15,7 @@ my %WriteMakefileArgs = (
     'File::Find' => '0',
     'File::Temp' => '0',
     'Test::InDistDir' => '0',
-    'Test::More' => '0',
+    'Test::More' => '0.96',
     'Test::Most' => '0'
   },
   'CONFIGURE_REQUIRES' => {
@@ -29,7 +29,7 @@ my %WriteMakefileArgs = (
     'Template' => '0',
     'Template::Parser' => '0'
   },
-  'VERSION' => '0.112070',
+  'VERSION' => '0.112120',
   'test' => {
     'TESTS' => 't/*.t'
   }

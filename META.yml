@@ -6,7 +6,7 @@ build_requires:
   File::Find: 0
   File::Temp: 0
   Test::InDistDir: 0
-  Test::More: 0
+  Test::More: 0.96
   Test::Most: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.30
@@ -28,10 +28,10 @@ no_index:
 provides:
   Template::AutoFilter:
     file: lib/Template/AutoFilter.pm
-    version: 0.112070
+    version: 0.112120
   Template::AutoFilter::Parser:
     file: lib/Template/AutoFilter/Parser.pm
-    version: 0.112070
+    version: 0.112120
 requires:
   Template: 0
   Template::Parser: 0
@@ -40,4 +40,4 @@ resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Template-AutoFilter
   homepage: https://github.com/wchristian/Template-AutoFilter
   repository: https://github.com/wchristian/Template-AutoFilter
-version: 0.112070
+version: 0.112120
