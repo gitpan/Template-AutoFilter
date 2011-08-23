@@ -3,7 +3,7 @@ use warnings;
 
 package Template::AutoFilter;
 
-our $VERSION = '0.112120'; # VERSION
+our $VERSION = '0.112350'; # VERSION
 # ABSTRACT: Template::Toolkit with automatic filtering
 
 
@@ -34,7 +34,7 @@ Template::AutoFilter - Template::Toolkit with automatic filtering
 
 =head1 VERSION
 
-version 0.112120
+version 0.112350
 
 =head1 SYNOPSIS
 
@@ -106,7 +106,7 @@ public review and contribution under the terms of the license.
 
 L<https://github.com/wchristian/Template-AutoFilter>
 
-  git clone https://github.com/wchristian/Template-AutoFilter
+  git clone https://github.com/wchristian/Template-AutoFilter.git
 
 =head1 AUTHOR
 

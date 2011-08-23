@@ -10,6 +10,7 @@ lib/Template/AutoFilter.pm
 lib/Template/AutoFilter/Parser.pm
 t/00-compile.t
 t/autofilter.t
+t/implicit_set.t
 t/included.tt
 xt/release/distmeta.t
 xt/release/kwalitee.t

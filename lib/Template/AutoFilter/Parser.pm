@@ -3,7 +3,7 @@ use warnings;
 
 package Template::AutoFilter::Parser;
 
-our $VERSION = '0.112120'; # VERSION
+our $VERSION = '0.112350'; # VERSION
 # ABSTRACT: parses TT templates and automatically adds filters to tokens
 
 
@@ -52,7 +52,7 @@ sub default_skip_directives {
     my @skip_directives = qw(
         CALL SET DEFAULT INCLUDE PROCESS WRAPPER BLOCK IF UNLESS ELSIF ELSE
         END SWITCH CASE FOREACH FOR WHILE FILTER USE MACRO TRY CATCH FINAL
-        THROW NEXT LAST RETURN STOP CLEAR META TAGS DEBUG
+        THROW NEXT LAST RETURN STOP CLEAR META TAGS DEBUG ASSIGN
     );
     return $self->make_skip_directives( \@skip_directives );
 }
@@ -76,7 +76,7 @@ Template::AutoFilter::Parser - parses TT templates and automatically adds filter
 
 =head1 VERSION
 
-version 0.112120
+version 0.112350
 
 =head1 DESCRIPTION
 

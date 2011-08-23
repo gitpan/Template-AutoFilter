@@ -9,29 +9,32 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'Template::Toolkit with automatic filtering',
-  'AUTHOR' => 'Christian Walde <walde.christian@googlemail.com>',
-  'BUILD_REQUIRES' => {
-    'File::Find' => '0',
-    'File::Temp' => '0',
-    'Test::InDistDir' => '0',
-    'Test::More' => '0.96',
-    'Test::Most' => '0'
+  "ABSTRACT" => "Template::Toolkit with automatic filtering",
+  "AUTHOR" => "Christian Walde <walde.christian\@googlemail.com>",
+  "BUILD_REQUIRES" => {
+    "File::Find" => 0,
+    "File::Temp" => 0,
+    "Test::InDistDir" => 0,
+    "Test::More" => "0.96",
+    "Test::Most" => 0
   },
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.30'
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'DISTNAME' => 'Template-AutoFilter',
-  'EXE_FILES' => [],
-  'LICENSE' => 'unrestricted',
-  'NAME' => 'Template::AutoFilter',
-  'PREREQ_PM' => {
-    'Template' => '0',
-    'Template::Parser' => '0'
+  "DISTNAME" => "Template-AutoFilter",
+  "EXE_FILES" => [],
+  "LICENSE" => "unrestricted",
+  "NAME" => "Template::AutoFilter",
+  "PREREQ_PM" => {
+    "Template" => 0,
+    "Template::Parser" => 0,
+    "base" => 0,
+    "strict" => 0,
+    "warnings" => 0
   },
-  'VERSION' => '0.112120',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "0.112350",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 
