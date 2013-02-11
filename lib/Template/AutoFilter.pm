@@ -3,7 +3,7 @@ use warnings;
 
 package Template::AutoFilter;
 
-our $VERSION = '0.112350'; # VERSION
+our $VERSION = '0.130420'; # VERSION
 # ABSTRACT: Template::Toolkit with automatic filtering
 
 
@@ -34,7 +34,7 @@ Template::AutoFilter - Template::Toolkit with automatic filtering
 
 =head1 VERSION
 
-version 0.112350
+version 0.130420
 
 =head1 SYNOPSIS
 
@@ -89,15 +89,15 @@ pass-through filter and creates the AutoFilter Parser.
 All parameters passed to this new() will also be passed to the parser's
 new().
 
-=for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders
+=for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders metacpan
 
 =head1 SUPPORT
 
 =head2 Bugs / Feature Requests
 
-Please report any bugs or feature requests by email to C<bug-template-autofilter at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/Public/Dist/Display.html?Name=Template-AutoFilter>. You will be automatically notified of any
-progress on the request by the system.
+Please report any bugs or feature requests through the issue tracker
+at L<http://rt.cpan.org/Public/Dist/Display.html?Name=Template-AutoFilter>.
+You will be notified automatically of any progress on your issue.
 
 =head2 Source Code
 
