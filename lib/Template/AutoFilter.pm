@@ -3,7 +3,7 @@ use warnings;
 
 package Template::AutoFilter;
 
-our $VERSION = '0.130420'; # VERSION
+our $VERSION = '0.132690'; # VERSION
 # ABSTRACT: Template::Toolkit with automatic filtering
 
 
@@ -34,7 +34,7 @@ Template::AutoFilter - Template::Toolkit with automatic filtering
 
 =head1 VERSION
 
-version 0.130420
+version 0.132690
 
 =head1 SYNOPSIS
 
@@ -88,6 +88,10 @@ pass-through filter and creates the AutoFilter Parser.
 
 All parameters passed to this new() will also be passed to the parser's
 new().
+
+=head1 CONTRIBUTORS
+
+Ryan Olson (cpan:GIMPSON) <ryan@ziprecruiter.com>
 
 =for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders metacpan
 
