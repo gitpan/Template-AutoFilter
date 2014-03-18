@@ -4,7 +4,7 @@
       "Christian Walde <walde.christian@googlemail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300034, CPAN::Meta::Converter version 2.131560",
+   "generated_by" : "Dist::Zilla version 5.014, CPAN::Meta::Converter version 2.140640",
    "license" : [
       "unrestricted"
    ],
@@ -34,6 +34,7 @@
          "requires" : {
             "Pod::Coverage::TrustPod" : "0",
             "Test::CPAN::Meta" : "0",
+            "Test::Kwalitee" : "1.12",
             "Test::Pod" : "1.41",
             "Test::Pod::Coverage" : "1.08"
          }
@@ -50,22 +51,25 @@
       },
       "test" : {
          "requires" : {
-            "File::Find" : "0",
+            "File::Spec" : "0",
             "File::Temp" : "0",
+            "IO::Handle" : "0",
+            "IPC::Open3" : "0",
             "Test::InDistDir" : "0",
             "Test::More" : "0.96",
-            "Test::Most" : "0"
+            "Test::Most" : "0",
+            "perl" : "5.006"
          }
       }
    },
    "provides" : {
       "Template::AutoFilter" : {
          "file" : "lib/Template/AutoFilter.pm",
-         "version" : "0.132690"
+         "version" : "0.140770"
       },
       "Template::AutoFilter::Parser" : {
          "file" : "lib/Template/AutoFilter/Parser.pm",
-         "version" : "0.132690"
+         "version" : "0.140770"
       }
    },
    "release_status" : "stable",
@@ -81,6 +85,6 @@
          "web" : "https://github.com/wchristian/Template-AutoFilter"
       }
    },
-   "version" : "0.132690"
+   "version" : "0.140770"
 }
 

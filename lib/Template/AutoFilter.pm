@@ -3,13 +3,12 @@ use warnings;
 
 package Template::AutoFilter;
 
-our $VERSION = '0.132690'; # VERSION
+our $VERSION = '0.140770'; # VERSION
 # ABSTRACT: Template::Toolkit with automatic filtering
 
 
 use base 'Template';
 
-use lib '..';
 use Template::AutoFilter::Parser;
 
 sub new {
@@ -26,7 +25,10 @@ sub new {
 1;
 
 __END__
+
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -34,7 +36,7 @@ Template::AutoFilter - Template::Toolkit with automatic filtering
 
 =head1 VERSION
 
-version 0.132690
+version 0.140770
 
 =head1 SYNOPSIS
 
@@ -93,6 +95,10 @@ new().
 
 Ryan Olson (cpan:GIMPSON) <ryan@ziprecruiter.com>
 
+Aran Deltac (cpan:BLUEFEET) <aran@ziprecruiter.com>
+
+Thomas Sibley (cpan:TSIBLEY) <tsibley@cpan.org>
+
 =for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders metacpan
 
 =head1 SUPPORT
@@ -125,4 +131,3 @@ This is free software, licensed under:
   DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE, Version 2, December 2004
 
 =cut
-

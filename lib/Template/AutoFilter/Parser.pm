@@ -3,7 +3,7 @@ use warnings;
 
 package Template::AutoFilter::Parser;
 
-our $VERSION = '0.132690'; # VERSION
+our $VERSION = '0.140770'; # VERSION
 # ABSTRACT: parses TT templates and automatically adds filters to tokens
 
 
@@ -25,6 +25,7 @@ sub split_text {
 
     for my $token ( @{$tokens} ) {
         next if !ref $token;
+        next if !ref $token->[2];   # Skip ITEXT (<foo>$bar</foo>)
 
         my %fields = grep { !ref } @{$token->[2]}; # filter out nested fields, they don't matter for our decision of whether there is a filter already
         next if $self->has_skip_field( \%fields );
@@ -69,7 +70,10 @@ sub make_skip_directives {
 1;
 
 __END__
+
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -77,7 +81,7 @@ Template::AutoFilter::Parser - parses TT templates and automatically adds filter
 
 =head1 VERSION
 
-version 0.132690
+version 0.140770
 
 =head1 DESCRIPTION
 
@@ -140,4 +144,3 @@ This is free software, licensed under:
   DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE, Version 2, December 2004
 
 =cut
-
