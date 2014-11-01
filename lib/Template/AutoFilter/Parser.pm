@@ -3,11 +3,12 @@ use warnings;
 
 package Template::AutoFilter::Parser;
 
-our $VERSION = '0.140770'; # VERSION
+our $VERSION = '0.143050'; # VERSION
 # ABSTRACT: parses TT templates and automatically adds filters to tokens
 
 
 use base 'Template::Parser';
+use List::MoreUtils qw< part >;
 
 sub new {
     my ( $class, $params ) = @_;
@@ -27,13 +28,33 @@ sub split_text {
         next if !ref $token;
         next if !ref $token->[2];   # Skip ITEXT (<foo>$bar</foo>)
 
-        my %fields = grep { !ref } @{$token->[2]}; # filter out nested fields, they don't matter for our decision of whether there is a filter already
-        next if $self->has_skip_field( \%fields );
-        next if ! %fields;
+        # Split a compound statement into individual directives
+        my ($part, $is_directive) = (0, 1);
+        my @directives = part {
+            # Skip over interpolated fields; they are unpaired
+            unless (ref) {
+                $part++ if $is_directive and $_ eq ';';
+                $is_directive = !$is_directive;
+            }
+            $part;
+        } @{$token->[2]};
 
-        push @{$token->[2]}, qw( FILTER | IDENT ), $self->{AUTO_FILTER};
+        for my $directive (@directives) {
+            # Filter out interpolated values in strings; they don't matter for
+            # our decision of whether to autofilter or not (e.g. an existing
+            # filter).  Note, this is not the same as ITEXT.  Also ignore
+            # semi-colon tokens, as they may make an empty directive look
+            # non-empty.  They are also inconsequential to our decision to
+            # autofilter or not.
+            my %fields = grep { !ref and $_ ne ';' } @$directive;
+            next if $self->has_skip_field( \%fields );
+            next if ! %fields;
+
+            push @$directive, qw( FILTER | IDENT ), $self->{AUTO_FILTER};
+        }
+
+        $token->[2] = [ map { @$_ } @directives ];
     }
-
     return $tokens;
 }
 
@@ -81,7 +102,7 @@ Template::AutoFilter::Parser - parses TT templates and automatically adds filter
 
 =head1 VERSION
 
-version 0.140770
+version 0.143050
 
 =head1 DESCRIPTION
 
@@ -133,14 +154,17 @@ Prebuilds a hash of directives to be skipped while applying auto filters.
 
 =head1 AUTHOR
 
-Christian Walde <walde.christian@googlemail.com>
+Christian Walde <walde.christian@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2011 by Christian Walde.
 
-This is free software, licensed under:
+Christian Walde has dedicated the work to the Commons by waiving all of his
+or her rights to the work worldwide under copyright law and all related or
+neighboring legal rights he or she had in the work, to the extent allowable by
+law.
 
-  DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE, Version 2, December 2004
+Works under CC0 do not require attribution. When citing the work, you should
+not imply endorsement by the author.
 
 =cut

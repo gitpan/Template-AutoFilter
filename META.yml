@@ -1,7 +1,7 @@
 ---
 abstract: 'Template::Toolkit with automatic filtering'
 author:
-  - 'Christian Walde <walde.christian@googlemail.com>'
+  - 'Christian Walde <walde.christian@gmail.com>'
 build_requires:
   File::Spec: '0'
   File::Temp: '0'
@@ -12,9 +12,9 @@ build_requires:
   Test::Most: '0'
   perl: '5.006'
 configure_requires:
-  ExtUtils::MakeMaker: '6.30'
+  ExtUtils::MakeMaker: '0'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 5.014, CPAN::Meta::Converter version 2.140640'
+generated_by: 'Dist::Zilla version 5.023, CPAN::Meta::Converter version 2.142690'
 license: unrestricted
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -31,11 +31,12 @@ no_index:
 provides:
   Template::AutoFilter:
     file: lib/Template/AutoFilter.pm
-    version: '0.140770'
+    version: '0.143050'
   Template::AutoFilter::Parser:
     file: lib/Template/AutoFilter/Parser.pm
-    version: '0.140770'
+    version: '0.143050'
 requires:
+  List::MoreUtils: '0'
   Template: '0'
   Template::Parser: '0'
   base: '0'
@@ -46,4 +47,4 @@ resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Template-AutoFilter
   homepage: https://github.com/wchristian/Template-AutoFilter
   repository: https://github.com/wchristian/Template-AutoFilter.git
-version: '0.140770'
+version: '0.143050'

@@ -3,7 +3,7 @@ use warnings;
 
 package Template::AutoFilter;
 
-our $VERSION = '0.140770'; # VERSION
+our $VERSION = '0.143050'; # VERSION
 # ABSTRACT: Template::Toolkit with automatic filtering
 
 
@@ -36,7 +36,7 @@ Template::AutoFilter - Template::Toolkit with automatic filtering
 
 =head1 VERSION
 
-version 0.140770
+version 0.143050
 
 =head1 SYNOPSIS
 
@@ -120,14 +120,17 @@ L<https://github.com/wchristian/Template-AutoFilter>
 
 =head1 AUTHOR
 
-Christian Walde <walde.christian@googlemail.com>
+Christian Walde <walde.christian@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2011 by Christian Walde.
 
-This is free software, licensed under:
+Christian Walde has dedicated the work to the Commons by waiving all of his
+or her rights to the work worldwide under copyright law and all related or
+neighboring legal rights he or she had in the work, to the extent allowable by
+law.
 
-  DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE, Version 2, December 2004
+Works under CC0 do not require attribution. When citing the work, you should
+not imply endorsement by the author.
 
 =cut
